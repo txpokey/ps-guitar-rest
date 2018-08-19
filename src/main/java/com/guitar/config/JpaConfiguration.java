@@ -1,10 +1,10 @@
 package com.guitar.config;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@EnableJpaRepositories(basePackages={"com.guitar.repository", "sci.shopping.repo" })
+
 public class JpaConfiguration {
 
+    // TODO : right now nothing needed here.
 }
