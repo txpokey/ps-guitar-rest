@@ -49,9 +49,9 @@ public class ModelRepository {
 	/**
 	 * Find
 	 */
-	public Model find(Long id) {
-		return modelJpaRepository.findOne(id);
-	}
+//	public Model find(Long id) {
+//		return modelJpaRepository.findOne(id);
+//	}
 
 	/**
 	 * Custom finder

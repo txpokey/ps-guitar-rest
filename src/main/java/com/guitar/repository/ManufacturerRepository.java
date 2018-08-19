@@ -43,9 +43,9 @@ public class ManufacturerRepository {
 	/**
 	 * Find
 	 */
-	public Manufacturer find(Long id) {
-		return manufacturerJpaRepository.findOne(id);
-	}
+//	public Manufacturer find(Long id) {
+//		return manufacturerJpaRepository.findOne(id);
+//	}
 
 	/**
 	 * Custom finder
