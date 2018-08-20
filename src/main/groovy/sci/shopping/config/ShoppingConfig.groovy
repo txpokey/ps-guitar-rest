@@ -1,10 +1,30 @@
 package sci.shopping.config
 
+import com.guitar.repository.LocationRepository
+import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.orm.jpa.JpaTransactionManager
+import org.springframework.transaction.PlatformTransactionManager
+
+import javax.persistence.EntityManager
+import javax.persistence.PersistenceContext
 
 @Configuration
-class ShoppingConfig {
+class ShoppingConfig{
 
-    // TODO : right now nothing needed here.
+    @PersistenceContext
+    private EntityManager entityManager
+
+    @Bean(name = 'locationRepository')
+    LocationRepository getLocationRepository() {
+        LocationRepository candidate = new LocationRepository()
+    }
+
+    @Bean(name = 'makTranactionManager')
+    PlatformTransactionManager getJpaTransactionManager() {
+        def emf = entityManager.getEntityManagerFactory()
+        new JpaTransactionManager(emf)
+    }
+
 
 }

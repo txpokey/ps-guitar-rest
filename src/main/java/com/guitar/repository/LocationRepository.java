@@ -8,6 +8,8 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import com.guitar.model.Location;
+import org.springframework.transaction.annotation.Transactional;
+@Transactional
 
 @Repository
 public class LocationRepository {
@@ -50,11 +52,17 @@ public class LocationRepository {
 	/**
 	 * Custom finder
 	 */
-	public List<Location> getLocationByStateName(String name) {
-		@SuppressWarnings("unchecked")
-		List<Location> locs = entityManager
-				.createQuery("select l from Location l where l.state like :state")
-				.setParameter("state", name + "%").getResultList();
-		return locs;
+//	public List<Location> getLocationByStateName(String name) {
+//		@SuppressWarnings("unchecked")
+//		List<Location> locs = entityManager
+//				.createQuery("select l from Location l where l.state like :state")
+//				.setParameter("state", name + "%").getResultList();
+//		return locs;
+//	}
+	void bootstrap()
+	{
+		Location p = new Location() ;
+		create(p) ;
+		return ;
 	}
 }

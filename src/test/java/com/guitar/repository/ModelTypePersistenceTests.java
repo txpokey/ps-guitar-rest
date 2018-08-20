@@ -16,9 +16,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.guitar.Main;
+import sci.shopping.Main;
 import com.guitar.model.ModelType;
-import com.guitar.repository.ModelTypeJpaRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Main.class)

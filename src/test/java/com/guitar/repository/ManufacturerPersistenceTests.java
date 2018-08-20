@@ -12,10 +12,8 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.guitar.Main;
+import sci.shopping.Main;
 import com.guitar.model.Manufacturer;
-import com.guitar.repository.ManufacturerJpaRepository;
-import com.guitar.repository.ManufacturerRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Main.class)
