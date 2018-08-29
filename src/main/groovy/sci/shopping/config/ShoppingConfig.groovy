@@ -1,7 +1,6 @@
 package sci.shopping.config
 
 import com.guitar.repository.LocationRepository
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.orm.jpa.JpaTransactionManager
@@ -29,8 +28,7 @@ class ShoppingConfig{
 
    @Bean(name = 'shoppingBootstrap')
     Bootstrap getBootstrap() {
-       def locationRepository = privateGetLocationRepository()
-       Bootstrap candidate = new Bootstrap(locationRepository)
+       Bootstrap candidate = new Bootstrap()
        candidate
     }
 
