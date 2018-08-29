@@ -16,25 +16,38 @@ import javax.persistence.PersistenceContext
 //@ContextConfiguration
 @Transactional('makTranactionManager')
 class Bootstrap{
-    @PersistenceContext
-    private EntityManager entityManager
+    Bootstrap( LocationRepository repo ) {
+        locationRepository = repo
+    }
+//    @PersistenceContext
+//    private EntityManager entityManager
 
 //    @Autowired
     final static ProductRepository productRepo = new ProductRepository()
 
-    @Autowired
+//    @Autowired
     LocationRepository locationRepository
 
 //    @Transactional
     void bootstrap(@NonNull EntityManager em)
     {
         LocationRepository lr = locationRepository
-        lr.entityManager = em
+//        lr.entityManager = em
         Location p = new Location()
 //        em.transaction.begin()
         lr.create(p)
 //        em.transaction.commit()
         println( p + "")
+    }
+    void bootstrap()
+    {
+        LocationRepository lr = locationRepository
+//        lr.entityManager = em
+        Location p = new Location()
+//        em.transaction.begin()
+        lr.create(p)
+//        em.transaction.commit()
+        println( "${p}")
     }
     static void bootstrap0()
     {

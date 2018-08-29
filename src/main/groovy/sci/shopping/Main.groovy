@@ -1,5 +1,6 @@
 package sci.shopping
 
+import com.guitar.repository.LocationRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -17,23 +18,23 @@ import javax.persistence.PersistenceContext
 @EntityScan(["sci.shopping.domain","com.guitar.model"])
 @EnableJpaRepositories(basePackages=["com.guitar.repository", "sci.shopping.repo"])
 @EnableTransactionManagement
-@SpringBootApplication(scanBasePackages = ["sci.security.config","sci.shopping"])
+@SpringBootApplication(scanBasePackages = ["sci.security.config","sci.shopping.*", "com.guitar"])
 
 class Main {
     static void main(String[] args) {
         SpringApplication.run(Main.class, args)
     }
-    @PersistenceContext
-    private EntityManager entityManager
 
     @Autowired
-            Bootstrap bootstrap
+    Bootstrap shoppingBootstrap
+
     @EventListener(ApplicationReadyEvent.class)
     void EventListenerExecute(){
 //        EntityManagerFactory emf = Persistence.createEntityManagerFactory("mak")
 //        EntityManager em = emf.createEntityManager()
         System.out.println("Application Ready Event is successfully Started")
-        bootstrap.bootstrap(em)
+//        bootstrap.bootstrap(entityManager)
+        shoppingBootstrap.bootstrap()
         System.out.println("Application Ready Event: injected")
     }
 }

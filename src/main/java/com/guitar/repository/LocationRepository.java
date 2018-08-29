@@ -16,6 +16,9 @@ public class LocationRepository {
 	@PersistenceContext
 	private EntityManager entityManager;
 
+//    LocationRepository() {}
+    LocationRepository(EntityManager em) {entityManager = em; }
+
 	/**
 	 * Create
 	 */
