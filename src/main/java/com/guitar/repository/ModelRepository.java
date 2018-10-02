@@ -46,12 +46,12 @@ public class ModelRepository {
 		modelJpaRepository.delete(mod);
 	}
 
-	/**
-	 * Find
-	 */
-	public Model find(Long id) {
-		return modelJpaRepository.findOne(id);
-	}
+//	/**
+//	 * Find
+//	 */
+//	public Model find(Long id) {
+//		return modelJpaRepository.findOne(id);
+//	}
 
 	/**
 	 * Custom finder
