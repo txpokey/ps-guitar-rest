@@ -65,7 +65,7 @@ public class ModelRepository {
 	 */
 	public Page<Model> getModelsByPriceRangeAndWoodType(BigDecimal lowest, BigDecimal highest, String wood) {
 		Sort sort = new Sort(Sort.Direction.ASC, "name");
-		Pageable page = new PageRequest(0, 2, sort);
+		Pageable page = PageRequest.of(0, 2, sort);
 		return modelJpaRepository.queryByPriceRangeAndWoodType(lowest, highest, "%" + wood + "%", page);
 	}
 
